@@ -1,3 +1,5 @@
 # gmApp2
+bower_components
 node_modules
 dist
+.git
