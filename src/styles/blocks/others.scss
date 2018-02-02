@@ -1,0 +1,16 @@
+.artist-container {
+	display: flex;
+	justify-content: flex-end;
+	&_select {
+		width: 200px;
+		margin-right: 5px;
+	}
+}
+
+.lyrics-content {
+	width: 600px;
+	justify-content: center;
+	margin: 20px auto;
+	font-style: italic;
+	color: $lyrics-color;
+}

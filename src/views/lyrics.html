@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+        <div class="panel-title">Lyrics:
+          <span ng-bind="track.artist_name"></span> -
+          <span ng-bind="track.album_name"></span>
+        </div>
+    </div>
+    <div class="panel-body text-center">
+      <div class="lyrics-content" ng-bind="lyrics"></div>
+      <button type="button" class="btn btn-success" ui-sref="tracks">Back to Tracks</button>
+    </div>
+  </div>
+</div>

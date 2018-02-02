@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="panel panel-info">
+    <div class="flex align-center panel-heading">
+      <div class="panel-title">Track List</div>
+      <div class="artist-container">
+        <select class="form-control artist-container_select" ng-init="artist = artists[0]" ng-model="artist" ng-options="o as o for o in artists"></select>
+        <button type="button" class="btn btn-success" ng-click="getTrackList()">Go</button>
+      </div>
+    </div>
+    <div class="panel-body">
+      <p ng-hide="trackList.length">No results found! Please select an artist and hit go.</p>
+      <table class="table" ng-show="trackList.length">
+        <thead>
+          <tr>
+            <th>Track ID</th>
+            <th>Album Name</th>
+            <th class="text-center">Track Rating</th>
+            <th class="text-center">Track length</th>
+            <th>Artist Name</th>
+            <th>Release Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="track in trackList track by $index">
+            <td><span ng-bind="track.track.track_id"></span></td>
+            <td><span ng-bind="track.track.album_name"></span></td>
+            <td class="text-center"><track-rating rating="track.track.track_rating"></track-rating></td>
+            <td class="text-center"><span ng-bind="track.track.track_length | trackLength"></span></td>
+            <td><span ng-bind="track.track.artist_name"></span></td>
+            <td><span ng-bind="track.track.first_release_date | date"></span></td>
+            <td class="text-center"><button class="btn btn-warning" ng-click="setTrack(track.track)">Lyrics</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
